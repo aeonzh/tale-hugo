@@ -10,6 +10,16 @@ This is a port of the [Tale theme for Jekyll](https://github.com/chesterhow/tale
 
 ### 1. Install the theme
 
+#### Hugo module (Recommended)
+
+[Hugo 0.56.0](https://gohugo.io/news/0.56.0-relnotes/) introduced Hugo modules as a way to manage components. To install this theme as a Hugo module, run the following command inside your Hugo site folder.
+
+```
+hugo mod init my-hugo-site
+```
+
+#### Git
+
 If your site is also under version control using git, the easiest way to install this theme is to add it as a submodule. If you have not created a git repo for your project yet, you need to run `git init` beforehand. Inside the folder of your Hugo site, run the following command.
 
 ```
@@ -23,6 +33,16 @@ git clone https://github.com/EmielH/tale-hugo.git themes/tale
 ```
 
 ### 2. Configure Hugo
+
+#### Hugo module
+
+Add the following line to `config.toml`
+
+```
+theme = "github.com/EmielH/tale-hugo"
+```
+
+#### Git
 
 Add the following line to `config.toml` to tell Hugo to use the theme.
 
@@ -41,6 +61,16 @@ hugo server -t tale
 For more information, read the official [setup guide](https://gohugo.io/overview/installing/) of Hugo.
 
 ### Update the theme
+
+#### Hugo module
+
+You can update the module by running the following command.
+
+```
+hugo mod get -u
+```
+
+#### Git
 
 If you have installed the theme as a git submodule, you can update the theme by issuing the following command inside your project folder.
 
@@ -103,12 +133,16 @@ Feel free to submit pull requests for other translations of Tale's texts.
 [Hugo documentation for multilingual sites](//gohugo.io/content-management/multilingual/)
 
 ### Disqus
+
 Tale supports Disqus integration, a comment system that empowers dynamic features to static websites. To install it, just add the key `disqusShortname` in your `config.toml`
-``` toml
+
+```toml
 disqusShortname = "disqus-example"
-``` 
-Add the parameter `comments` in the front-matter of the pages where you want to allow comments 
-``` 
+```
+
+Add the parameter `comments` in the front-matter of the pages where you want to allow comments
+
+```
 ---
 comments: true
 ---
@@ -179,4 +213,5 @@ Thanks
 - to [lucperkins](https://github.com/lucperkins) for the [Fresh theme](https://github.com/lucperkins/hugo-fresh) from which I used some useful snippets of code.
 
 ## License
+
 See [LICENSE](https://github.com/EmielH/tale-hugo/blob/master/LICENSE).
